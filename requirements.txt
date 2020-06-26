@@ -11,3 +11,6 @@ imgaug==0.2.6
 tensorflow-gpu==1.10.0
 keras==2.2.4
 git+https://www.github.com/keras-team/keras-contrib.git
+wget
+tensorflow
+gdown
