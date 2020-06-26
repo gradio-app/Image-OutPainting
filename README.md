@@ -1,4 +1,6 @@
-# Keras implementation of Image OutPainting
+# Keras implementation of Image OutPainting (on Gradio!)
+
+![alt text](https://github.com/gradio-app/Image-OutPainting/blob/master/screenshots/Screen%20Shot%202020-06-26%20at%203.11.53%20PM.png?raw=true)
 
 This is an implementation of [Painting Outside the Box: Image Outpainting](https://cs230.stanford.edu/projects_spring_2018/posters/8265861.pdf) paper from Standford University. 
 Some changes have been made to work with 256*256 image:
