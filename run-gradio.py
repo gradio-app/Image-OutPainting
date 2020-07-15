@@ -145,7 +145,10 @@ def load():
     graph = tensorflow.get_default_graph()
     return GEN, graph
 
+GEN, graph = load()
+
 def predict(image, model):
+    image = Image.fromarray(image.astype('uint8'), 'RGB')
     GEN, graph = model
     image = image.convert('RGB')
     image = np.array(image)
@@ -165,10 +168,13 @@ def predict(image, model):
     return predicted_image
 
 
-INPUTS = gradio.inputs.ImageIn(cast_to="pillow")
+INPUTS = gradio.inputs.ImageIn()
 OUTPUTS = gradio.outputs.Image()
-INTERFACE = gradio.Interface(fn=predict, inputs=INPUTS, outputs=OUTPUTS,
-                             load_fn=load)
+INTERFACE = gradio.Interface(fn=predict, inputs=INPUTS, 
+                             outputs=OUTPUTS,
+                             title='Image Outpainting', 
+                             description='Restore missing parts of an image!', 
+                             thumbnail='https://camo.githubusercontent.com/1374c4a783e9a1b3f31cda08e84fd1c39ebb618d/687474703a2f2f692e696d6775722e636f6d2f704455707a63592e6a7067')
 
 INTERFACE.launch(inbrowser=True)
 
